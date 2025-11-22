@@ -1,0 +1,27 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex: 1;
+  margin-left: 260px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  background-color: #f8fafc;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .main-container {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Desktop - cuando sidebar está colapsado */
+@media (min-width: 992px) {
+  .main-container.sidebar-collapsed {
+    margin-left: 0;
+  }
+}

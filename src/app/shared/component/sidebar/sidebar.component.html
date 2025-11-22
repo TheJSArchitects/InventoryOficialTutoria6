@@ -1,0 +1,76 @@
+<div
+  class="sidebar bg-white d-flex flex-column"
+  [class.show]="isMenuOpen"
+  [class.collapsed]="!isMenuOpen"
+>
+  <!-- Header del Sidebar -->
+  <div class="sidebar-header px-3 py-4">
+    <div class="d-flex align-items-center">
+      <div
+        class="logo-circle bg-primary d-flex align-items-center justify-content-center me-3"
+        style="width: 48px; height: 48px; border-radius: 12px"
+      >
+        <span class="fw-bold text-white" style="font-size: 1.2rem">INV</span>
+      </div>
+      <div>
+        <div class="fw-bold" style="font-size: 1rem; color: #1a1a1a">Inventory</div>
+        <small class="text-muted" style="font-size: 0.75rem">v2.0.1</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú Items -->
+  <nav class="sidebar-menu flex-grow-1 px-3 py-2">
+    @for (item of menuItems; track item.label) { @if (item.section && (menuItems.indexOf(item) === 0
+    || menuItems[menuItems.indexOf(item) - 1].section !== item.section)) {
+    <div
+      class="section-title text-uppercase text-muted px-3 mt-3 mb-2"
+      style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px"
+    >
+      {{ item.section }}
+    </div>
+    }
+    <div
+      class="menu-item d-flex align-items-center justify-content-between px-3 py-2 mb-1 rounded"
+      [class.active]="item.active"
+      (click)="navigateTo(item.route)"
+      style="cursor: pointer"
+    >
+      <div class="d-flex align-items-center">
+        <i [class]="item.icon" class="me-3" style="font-size: 1.1rem"></i>
+        <span class="menu-label">{{ item.label }}</span>
+      </div>
+      @if (item.badge) {
+      <span class="badge bg-danger rounded-pill" style="font-size: 0.7rem">{{ item.badge }}</span>
+      }
+    </div>
+    }
+  </nav>
+
+  <!-- Usuario al final -->
+  <div class="sidebar-footer p-3 border-top">
+    <div class="d-flex align-items-center">
+      <div
+        class="user-avatar text-white rounded-circle me-3 d-flex align-items-center justify-content-center"
+        style="
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        "
+      >
+        {{ username.substring(0, 2).toUpperCase() }}
+      </div>
+      <div class="flex-grow-1">
+        <div class="fw-semibold" style="font-size: 0.9rem; color: #1a1a1a">{{ username }}</div>
+        <small class="text-muted" style="font-size: 0.75rem">Administrador</small>
+      </div>
+      <button class="btn btn-link text-muted p-0" (click)="logaut()" title="Cerrar sesión">
+        <i class="bi bi-box-arrow-right" style="font-size: 1.1rem"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay para cerrar menú en móvil -->
+<div class="sidebar-overlay" [class.show]="isMenuOpen" (click)="toggleMenu()"></div>
