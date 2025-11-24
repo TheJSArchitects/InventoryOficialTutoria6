@@ -1,1 +1,77 @@
-<p>Danny16-col</p>
+<!-- Header de Compras -->
+<header class="d-flex align-items-center justify-content-between mb-3" style="gap: 10px">
+  <div>
+    <h2 style="color: #1a1a1a">Resumen General</h2>
+    <p class="text-muted">Bienvenido de vuelta, aquí tienes lo que está pasando hoy.</p>
+  </div>
+
+  <div class="d-flex align-items-center" style="gap: 8px">
+    <div class="input-group" style="width: 280px">
+      <span class="input-group-text">
+        <i class="bi bi-search"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Search..." />
+    </div>
+
+    <button type="button" class="btn btn-primary">+ Nueva Orden</button>
+  </div>
+</header>
+
+<!-- Cards de Resumen -->
+<section class="container mt-4 w-100 d-block">
+  <div class="row g-3">
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h6 class="text-muted mb-0">Valor Inventario</h6>
+            <i class="bi bi-currency-dollar text-muted fs-5"></i>
+          </div>
+          <h4 class="fw-bold mb-1">$45,231.89</h4>
+          <p class="mb-0 text-success"><i class="bi bi-arrow-up-right"></i> +20.1% vs mes anterior</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h6 class="text-muted mb-0">Items Stock Bajo</h6>
+            <i class="bi bi-exclamation-triangle text-warning fs-5"></i>
+          </div>
+          <h4 class="fw-bold mb-1">12</h4>
+          <p class="mb-0 text-warning">Requieren atención inmediata</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h6 class="text-muted mb-0">Total Productos</h6>
+            <i class="bi bi-box text-muted fs-5"></i>
+          </div>
+          <h4 class="fw-bold mb-1">1,429</h4>
+          <p class="mb-0 text-muted">En 3 almacenes diferentes</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h6 class="text-muted mb-0">Órdenes Pendientes</h6>
+            <i class="bi bi-clock text-success fs-5"></i>
+          </div>
+          <h4 class="fw-bold mb-1">7</h4>
+          <p class="mb-0 text-primary">3 para entrega hoy</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
